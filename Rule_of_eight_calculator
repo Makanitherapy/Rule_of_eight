@@ -1,0 +1,32 @@
+#calculates the units for given time stamp
+from datetime import datetime
+from datetime import timedelta
+#s1 = start time , s2= end time,
+s1 = '10:33:00'
+s2 = '12:05:00' # for example
+FMT = '%H:%M:%S'
+tdelta = datetime.strptime(s2, FMT) - datetime.strptime(s1, FMT)
+print ('Total minutes =', tdelta)
+
+t1 = timedelta(minutes=8)
+t2 = timedelta(minutes=23)
+t3 = timedelta(minutes=53)
+t4 = timedelta(minutes=68)
+t5 = timedelta(minutes=83)
+t6 = timedelta(minutes=92)
+# timedelta = '00:08:00'(t1, FMT)
+
+if tdelta >= (t1) and tdelta <= (t2):
+    print ('1 unit')
+elif tdelta <= (t2):
+    print ('No units. You need at least 8. Check your times.')
+elif tdelta >= (t2) and tdelta <= (t3):
+    print ('2 units')
+elif tdelta >= (t3) and tdelta <= (t4):
+    print ('3 units')
+elif tdelta >= (t4) and tdelta <= (t5):
+    print ('4 units')
+elif tdelta >= (t5) and tdelta <= (t6):
+    print ('5 units')
+else:
+    print ('Medicare fraud? Check your times.')
